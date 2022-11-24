@@ -1,0 +1,18 @@
+<div class="card__input">
+  <label for="">Pesquisar Pokemon:</label>
+  <input type="text" (input)="getPokemon($any($event.target).value)">
+</div>
+
+<div class="card">
+
+  <div class="card__title">
+    <h3>{{ pokemon.name }}</h3>
+  </div>
+  <div class="card__body">
+    <img [src]="pokemon.sprites.front_default" height="150" alt="{{ pokemon.name}}">
+  </div>
+  <div class="card__stats">
+    <span class="card__stats__type" *ngFor="let t of pokemon.types">{{ t.type.name }}</span>
+  </div>
+
+</div>
